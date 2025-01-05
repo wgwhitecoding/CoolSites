@@ -1,0 +1,216 @@
+/* ================================
+   GLOBAL STYLES
+================================ */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.navbar {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand i {
+    margin-right: 10px;
+}
+
+/* ================================
+     HERO SECTION
+  ================================ */
+.hero-section {
+    height: 50vh;
+    background: linear-gradient(120deg, #007bff, #0056b3);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-section h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: slideIn 1s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+.hero-section .gradient-text {
+    background: linear-gradient(45deg, #ff758c, #ff7eb3);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero-section p {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: slideIn 1s ease-out forwards;
+    animation-delay: 1s;
+}
+
+.hero-section .btn {
+    padding: 12px 30px;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: slideIn 1s ease-out forwards;
+    animation-delay: 1.5s;
+}
+
+.hero-section .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* ================================
+     FEATURES SECTION
+  ================================ */
+.features {
+    padding: 50px 20px;
+}
+
+.features .row>div {
+    opacity: 0;
+    /* Start invisible */
+    transform: translateY(20px);
+    /* Start slightly below */
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+.features .row>div:nth-child(1) {
+    animation-delay: 2s;
+    /* First feature fades in after 2s */
+}
+
+.features .row>div:nth-child(2) {
+    animation-delay: 2.5s;
+    /* Second feature fades in after 2.5s */
+}
+
+.features .row>div:nth-child(3) {
+    animation-delay: 3s;
+    /* Third feature fades in after 3s */
+}
+
+.features i {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease-in-out;
+    color: #007bff;
+}
+
+.features i:hover {
+    transform: scale(1.1);
+    color: #0056b3;
+}
+
+.features h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.features p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* ================================
+   FOOTER SECTION
+================================ */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 15px 20px;
+    margin-top: auto;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #ccc;
+}
+
+footer .fab,
+footer .fas {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+footer .fab:hover,
+footer .fas:hover {
+    transform: scale(1.1);
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+footer p .text-secondary {
+    color: #bbb;
+}
+
+
+/* ================================
+     ANIMATIONS
+  ================================ */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================================
+     RESPONSIVE DESIGN
+  ================================ */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    .features h3 {
+        font-size: 1.2rem;
+    }
+}
