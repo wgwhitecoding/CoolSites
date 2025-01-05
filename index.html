@@ -15,7 +15,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
         <div class="container">
-            <a class="navbar-brand" href="index.html"><i class="fas fa-laptop-code"></i> My Services</a>
+            <a class="navbar-brand" href="#hero"><i class="fas fa-laptop-code"></i> My Services</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -23,13 +23,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="#hero">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
+                        <a class="nav-link" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pricing.html">Pricing</a>
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pricing">Pricing</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact</a>
@@ -39,19 +42,53 @@
         </div>
     </nav>
 
-
     <!-- Hero Section -->
-    <header class="hero-section text-white text-center d-flex align-items-center">
+    <header id="hero" class="hero-section text-white text-center d-flex align-items-center">
         <div class="container">
             <h1 class="fw-bold mb-3 animate-slide-in">Welcome to <span class="gradient-text">My Services</span></h1>
             <p class="lead mb-4">Creating professional, high-quality websites to bring your business online.</p>
-            <a href="pricing.html" class="btn btn-primary btn-lg shadow">Get Started</a>
+            <a href="#pricing" class="btn btn-primary btn-lg shadow">Get Started</a>
         </div>
     </header>
 
-    <!-- Features Section -->
-    <section class="features py-5">
+    <section id="about" class="py-5">
         <div class="container">
+            <!-- About Header -->
+            <h2 class="fw-bold mb-4 text-start" data-aos="fade-up">About Me</h2>
+            <div class="row gy-4">
+                <!-- First Column -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <p>
+                        Hi, I’m Will, a full-stack developer with a passion for creating websites that are stunning and functional.
+                        I work with small businesses and individuals to bring ideas to life online, tailoring each project to their unique needs. Each website I create is built with care, focusing on quality and precision to ensure it aligns perfectly with your goals and delivers exceptional results.
+                    </p>
+                </div>
+                <!-- Second Column -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <p>
+                        Unlike larger agencies, I only work on <strong class="highlight">one project at a time</strong>. This means your 
+                        website gets my undivided attention. You’ll be involved in every step of the process. Together, 
+                        we’ll craft a site that reflects your vision without compromises, ensuring it meets your requirements. 
+                        My approach is collaborative and detail-oriented, ensuring every feature aligns with your needs.
+                    </p>
+                </div>
+                <!-- Third Column -->
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <p>
+                        Whether it’s a sleek one-page design or a more detailed project, I’m here to make your business stand 
+                        out online. My goal is to deliver a website that not only looks amazing but also performs flawlessly. 
+                        Together, we’ll create a site that truly represents your brand and helps your business succeed. Let’s make 
+                        your vision a reality and take your business to the next level.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section id="features" class="py-5">
+        <div class="container">
+            <h2 class="fw-bold text-center mb-4">Our Features</h2>
             <div class="row text-center">
                 <div class="col-md-4">
                     <i class="fas fa-desktop fa-3x mb-3 text-primary"></i>
@@ -72,6 +109,47 @@
         </div>
     </section>
 
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-5 bg-light">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-4">Pricing</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="fw-bold">Basic</h4>
+                        </div>
+                        <div class="card-body">
+                            <h3>£300+</h3>
+                            <p>1-page website with responsive design and a basic contact form.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="fw-bold">Standard</h4>
+                        </div>
+                        <div class="card-body">
+                            <h3>£500+</h3>
+                            <p>2-page website with advanced features and SEO setup.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="fw-bold">Premium</h4>
+                        </div>
+                        <div class="card-body">
+                            <h3>Custom Pricing</h3>
+                            <p>Comprehensive websites with tailored features and design.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="bg-dark text-white mt-auto">
@@ -79,29 +157,28 @@
             <!-- Social Links -->
             <div class="d-flex justify-content-center mb-3">
                 <a href="https://facebook.com" class="text-white me-3" target="_blank" title="Facebook">
-                    <i class="fab fa-facebook fa-2x"></i>
+                    <i class="fab fa-facebook fa-lg"></i>
                 </a>
                 <a href="https://twitter.com" class="text-white me-3" target="_blank" title="Twitter">
-                    <i class="fab fa-twitter fa-2x"></i>
+                    <i class="fab fa-twitter fa-lg"></i>
                 </a>
                 <a href="https://linkedin.com" class="text-white me-3" target="_blank" title="LinkedIn">
-                    <i class="fab fa-linkedin fa-2x"></i>
+                    <i class="fab fa-linkedin fa-lg"></i>
                 </a>
                 <!-- WhatsApp Link -->
                 <a href="https://wa.me/yourphonenumber" class="text-white me-3" target="_blank" title="WhatsApp">
-                    <i class="fab fa-whatsapp fa-2x"></i>
+                    <i class="fab fa-whatsapp fa-lg"></i>
                 </a>
                 <!-- Contact Page Button -->
                 <a href="contact.html" class="text-white" title="Contact Us">
-                    <i class="fas fa-info-circle fa-2x"></i>
+                    <i class="fas fa-info-circle fa-lg"></i>
                 </a>
             </div>
             <p>All rights reserved. <span class="text-secondary">&trade; Your Business Name</span></p>
         </div>
     </footer>
-
-
-
+    
+    <script src="assets/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

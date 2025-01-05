@@ -24,7 +24,7 @@ body {
      HERO SECTION
   ================================ */
 .hero-section {
-    height: 50vh;
+    height: 55vh;
     background: linear-gradient(120deg, #007bff, #0056b3);
     color: #fff;
     display: flex;
@@ -76,6 +76,62 @@ body {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
+
+/* ================================
+     ABOUT SECTION
+  ================================ */
+#about {
+    background: linear-gradient(135deg, #f8f9fa 50%, #e9ecef 50%);
+    min-height: 40vh;
+    padding: 60px 20px;
+}
+
+#about h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 30px;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+#about .row>div {
+    position: relative;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+#about .row>div:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+#about .row>div:nth-child(2) {
+    animation-delay: 1s;
+}
+
+#about .row>div:nth-child(3) {
+    animation-delay: 1.5s;
+}
+
+#about .row>div:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 10%;
+    right: 0;
+    width: 1px;
+    height: 80%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+}
+
+#about p {
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: justify;
+    margin: 0;
+    color: #444;
+    padding: 10px 0;
+}
+
 /* ================================
      FEATURES SECTION
   ================================ */
@@ -85,25 +141,20 @@ body {
 
 .features .row>div {
     opacity: 0;
-    /* Start invisible */
     transform: translateY(20px);
-    /* Start slightly below */
     animation: fadeIn 1s ease-in-out forwards;
 }
 
 .features .row>div:nth-child(1) {
     animation-delay: 2s;
-    /* First feature fades in after 2s */
 }
 
 .features .row>div:nth-child(2) {
     animation-delay: 2.5s;
-    /* Second feature fades in after 2.5s */
 }
 
 .features .row>div:nth-child(3) {
     animation-delay: 3s;
-    /* Third feature fades in after 3s */
 }
 
 .features i {
@@ -169,7 +220,6 @@ footer p {
 footer p .text-secondary {
     color: #bbb;
 }
-
 
 /* ================================
      ANIMATIONS
