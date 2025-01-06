@@ -47,31 +47,6 @@ footer p {
 
 
 /* ================================
-   TYPEWRITER EFFECT
-================================ */
-.typewriter-target::after {
-    content: "|";
-    display: none;
-    animation: blink 1s steps(2, start) infinite;
-}
-
-@keyframes blink {
-    0%, 50% {
-        opacity: 1;
-    }
-    51%, 100% {
-        opacity: 0;
-    }
-}
-
-/* Exclude About Me Header */
-#about h2::after {
-    content: none;
-}
-
-
-
-/* ================================
    NAVBAR STYLES
 ================================ */
 .navbar {
@@ -94,10 +69,11 @@ footer p {
     color: #fff;
 }
 
-.navbar-brand i {
+.navbar-brand i, .text-secondary i{
     margin-right: 10px;
     color: #ff7eb3;
 }
+
 
 .nav-link {
     font-size: 1rem;
@@ -261,7 +237,6 @@ footer p {
     background: linear-gradient(135deg, #f8f9fa 50%, #e9ecef 50%);
 }
 
-
 #about h2 {
     opacity: 0;
     transform: translateY(20px);
@@ -269,7 +244,12 @@ footer p {
     animation-delay: 0.3s;
 }
 
+#about .row {
+    position: relative;
+}
+
 #about .row > div {
+    position: relative;
     opacity: 0;
     animation: fadeIn 1s ease-in-out forwards;
 }
@@ -289,12 +269,15 @@ footer p {
 #about .row > div:not(:last-child)::after {
     content: "";
     position: absolute;
-    top: 10%;
-    right: 0;
-    width: 1px;
-    height: 80%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));
+    top: 10%; /* Start the line 10% from the top */
+    bottom: 10%; /* End the line 10% before the bottom */
+    left: calc(100% + 10px); /* Position at the centre of the gap */
+    width: 1px; /* Line thickness */
+    background: linear-gradient(to bottom, #ddd 70%, rgba(221, 221, 221, 0)); /* Gradient for fading effect */
+    transform: translateX(-50%); /* Centre the line perfectly */
+    z-index: 1; /* Ensure the line appears on top */
 }
+
 
 #about p {
     font-size: 1rem;
@@ -304,6 +287,7 @@ footer p {
     padding: 10px 0;
 }
 
+/* Keyframes for Fade-in Animation */
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -312,6 +296,26 @@ footer p {
     100% {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #about .row {
+        flex-direction: column; /* Stack columns vertically */  
+    }
+    #about p {
+        text-align: center;
+        margin-right: 20px;
+    }
+
+
+    #about .row > div {
+        flex: 1 1 100%; /* Full width for each column */
+        max-width: 100%; /* Ensure columns are stacked */
+    }
+
+    #about .row > div:not(:last-child)::after {
+        display: none; /* Hide the lines between columns on mobile */
     }
 }
 
@@ -355,6 +359,7 @@ footer p {
     font-weight: 700;
     margin-bottom: 15px;
     color: #111;
+    text-align: center;
 }
 
 #features p {
@@ -410,74 +415,51 @@ footer p {
     }
 }
 
-
 /* ================================
    PROJECT CARD STYLING
 ================================ */
-.container p {
-    text-align: center;
-}
-.container h3 {
-    text-indent: 20px;
-}
-
 .project-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    padding: 20px;
-    text-align: center;
-    border: none;
     position: relative;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.project-card:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    transform: translateY(-5px); /* Slight lift on hover */
+    text-align: center;
+    margin-bottom: 40px;
 }
 
 .project-card img {
     border-radius: 10px;
+    width: 100%;
     height: 200px;
     object-fit: cover;
+    margin-bottom: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card img:hover {
-    transform: scale(1.05);
+    transform: scale(1.05)
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* Heading and Text */
 .project-card h5 {
-    margin-top: 15px;
     font-size: 1.2rem;
     font-weight: bold;
     color: #111;
+    margin: 10px 0; /* Space above and below heading */
 }
 
 .project-card p {
     font-size: 0.9rem;
     color: #6c757d;
-    margin: 10px 0;
-    flex-grow: 1;
+    margin-bottom: 15px;
     line-height: 1.5;
 }
 
-/* ================================
-   PROJECT BUTTON STYLING
-================================ */
-
-.project-btn {
+/* Button Styling */
+.project-card .project-btn {
     display: inline-block;
-    margin-top: auto;
-    padding: 8px 20px;
+    padding: 10px 20px;
     font-size: 0.9rem;
     font-weight: bold;
+    border: none;
     border-radius: 20px;
     background: linear-gradient(135deg, #006d77, #023047);
     color: #fff;
@@ -485,17 +467,119 @@ footer p {
     transition: transform 0.3s ease, background 0.3s ease;
 }
 
-.project-btn:hover {
+.project-card .project-btn:hover {
     transform: scale(1.05);
     background: linear-gradient(120deg, #005f73, #0a9396, #94d2bd);
 }
 
-.project-btn:active {
+.project-card .project-btn:active {
     transform: scale(0.98);
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
+/* Row Styling for Layout */
+.row {
+    display: flex;
+    justify-content: space-around; /* Evenly spaced cards */
+    align-items: flex-start; /* Align items at the top */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
 
+.col-md-4 {
+    flex: 1 1 calc(33.333% - 20px); /* Equal width for three cards with margin */
+    max-width: calc(33.333% - 20px);
+    margin: 10px; /* Space between cards */
+    box-sizing: border-box;
+}
+
+/* ================================
+   CONTAINER STYLING
+================================ */
+.container p {
+    text-align: center;
+    margin-bottom: 20px; /* Adjust spacing */
+}
+
+.container h3 {
+    text-indent: 20px;
+    text-align: left; /* Align text left for consistency */
+    margin-bottom: 20px;
+}
+
+/* ================================
+   PROJECT SECTION
+================================ */
+.project-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.project-section img {
+    border-radius: 10px;
+    height: 200px;
+    object-fit: cover;
+    width: 100%; /* Full width */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.project-section img:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.project-section h5 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #111;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.project-section p {
+    font-size: 0.9rem;
+    color: #6c757d;
+    text-align: center;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+/* ================================
+   PROJECT BUTTON STYLING
+================================ */
+.project-btn {
+    display: inline-block;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border: none; /* Ensures no border */
+    border-radius: 20px; /* Keeps the rounded look */
+    background: linear-gradient(135deg, #006d77, #023047);
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.project-btn:hover {
+    transform: scale(1.05); /* Slight scaling */
+    background: linear-gradient(120deg, #005f73, #0a9396, #94d2bd);
+}
+
+.project-btn:active {
+    transform: scale(0.98); /* Shrink effect on click */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* ================================
+   RESPONSIVE DESIGN
+================================ */
+@media (max-width: 768px) {
+    .project-section img {
+        height: 150px; /* Reduce image height on small screens */
+    }
+}
 
 
 
