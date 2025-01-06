@@ -255,11 +255,12 @@ footer p {
 /* ================================
    ABOUT SECTION
 ================================ */
-
-#about {
+#about-features {
+    width: 100%; /* Full width */
+    padding: 60px 20px; /* Consistent padding */
     background: linear-gradient(135deg, #f8f9fa 50%, #e9ecef 50%);
-    padding: 60px 20px;
 }
+
 
 #about h2 {
     opacity: 0;
@@ -320,18 +321,6 @@ footer p {
    FEATURES SECTION
 ================================ */
 
-#features {
-    background-color: #e9ecef; /* Base gray background for the whole section */
-    background-image: linear-gradient(135deg, #f8f9fa 50%, transparent 50%);
-    background-position: -761px 0; /* Align the triangle gradient with #about */
-    background-size: 200% 100%; /* Extend the gradient size */
-    padding: 60px 20px;
-    position: relative;
-}
-
-
-
-
 #features h2 {
     margin-bottom: 40px !important;
     font-family: 'Montserrat', sans-serif;
@@ -381,7 +370,6 @@ footer p {
     margin: 0 auto;
     display: inline-block;
     color: #6c757d;
-    margin-bottom: 40px !important;
 }
 
 .feature-list li {
