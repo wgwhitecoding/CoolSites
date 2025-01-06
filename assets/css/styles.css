@@ -45,7 +45,6 @@ footer p {
     font-weight: 300;
 }
 
-
 /* ================================
    NAVBAR STYLES
 ================================ */
@@ -119,7 +118,6 @@ footer p {
     }
 }
 
-
 /* ================================
    HERO SECTION
 ================================ */
@@ -142,7 +140,6 @@ footer p {
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
-
 
 .hero-section h1 {
     font-size: 2.8rem;
@@ -193,7 +190,6 @@ footer p {
     background: linear-gradient(120deg, #005f73, #0a9396, #94d2bd);
 }
 
-
 .hero-section .btn:active {
     transform: translateY(0) scale(0.98);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
@@ -232,8 +228,8 @@ footer p {
    ABOUT SECTION
 ================================ */
 #about-features {
-    width: 100%; /* Full width */
-    padding: 60px 20px; /* Consistent padding */
+    width: 100%;
+    padding: 60px 20px;
     background: linear-gradient(135deg, #f8f9fa 50%, #e9ecef 50%);
 }
 
@@ -269,15 +265,14 @@ footer p {
 #about .row > div:not(:last-child)::after {
     content: "";
     position: absolute;
-    top: 10%; /* Start the line 10% from the top */
-    bottom: 10%; /* End the line 10% before the bottom */
-    left: calc(100% + 10px); /* Position at the centre of the gap */
-    width: 1px; /* Line thickness */
-    background: linear-gradient(to bottom, #ddd 70%, rgba(221, 221, 221, 0)); /* Gradient for fading effect */
-    transform: translateX(-50%); /* Centre the line perfectly */
-    z-index: 1; /* Ensure the line appears on top */
+    top: 10%;
+    bottom: 10%;
+    left: calc(100% + 10px);
+    width: 1px;
+    background: linear-gradient(to bottom, #ddd 70%, rgba(221, 221, 221, 0));
+    transform: translateX(-50%);
+    z-index: 1;
 }
-
 
 #about p {
     font-size: 1rem;
@@ -287,7 +282,6 @@ footer p {
     padding: 10px 0;
 }
 
-/* Keyframes for Fade-in Animation */
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -298,33 +292,29 @@ footer p {
         transform: translateY(0);
     }
 }
-/* Responsive Adjustments */
+
 @media (max-width: 768px) {
     #about .row {
-        flex-direction: column; /* Stack columns vertically */  
+        flex-direction: column;
     }
     #about p {
         text-align: center;
         margin-right: 20px;
     }
 
-
     #about .row > div {
-        flex: 1 1 100%; /* Full width for each column */
-        max-width: 100%; /* Ensure columns are stacked */
+        flex: 1 1 100%;
+        max-width: 100%;
     }
 
     #about .row > div:not(:last-child)::after {
-        display: none; /* Hide the lines between columns on mobile */
+        display: none;
     }
 }
-
-
 
 /* ================================
    FEATURES SECTION
 ================================ */
-
 #features h2 {
     margin-bottom: 40px !important;
     font-family: 'Montserrat', sans-serif;
@@ -383,8 +373,7 @@ footer p {
     margin-bottom: 10px;
     font-size: 0.9rem;
     line-height: 1.5;
-    text-align: left;
-    
+    text-align: left;  
 }
 
 .feature-list li::before {
@@ -395,8 +384,7 @@ footer p {
     left: 0;
     top: 0;
     color: #007bff;
-    font-size: 0.8rem;
-    
+    font-size: 0.8rem; 
 }
 
 @media (max-width: 768px) {
@@ -434,16 +422,15 @@ footer p {
 }
 
 .project-card img:hover {
-    transform: scale(1.05)
+    transform: scale(1.05);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Heading and Text */
 .project-card h5 {
     font-size: 1.2rem;
     font-weight: bold;
     color: #111;
-    margin: 10px 0; /* Space above and below heading */
+    margin: 10px 0;
 }
 
 .project-card p {
@@ -453,7 +440,6 @@ footer p {
     line-height: 1.5;
 }
 
-/* Button Styling */
 .project-card .project-btn {
     display: inline-block;
     padding: 10px 20px;
@@ -477,18 +463,17 @@ footer p {
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
-/* Row Styling for Layout */
 .row {
     display: flex;
-    justify-content: space-around; /* Evenly spaced cards */
-    align-items: flex-start; /* Align items at the top */
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .col-md-4 {
-    flex: 1 1 calc(33.333% - 20px); /* Equal width for three cards with margin */
+    flex: 1 1 calc(33.333% - 20px);
     max-width: calc(33.333% - 20px);
-    margin: 10px; /* Space between cards */
+    margin: 10px;
     box-sizing: border-box;
 }
 
@@ -497,12 +482,12 @@ footer p {
 ================================ */
 .container p {
     text-align: center;
-    margin-bottom: 20px; /* Adjust spacing */
+    margin-bottom: 20px;
 }
 
 .container h3 {
     text-indent: 20px;
-    text-align: left; /* Align text left for consistency */
+    text-align: left;
     margin-bottom: 20px;
 }
 
@@ -520,13 +505,13 @@ footer p {
     border-radius: 10px;
     height: 200px;
     object-fit: cover;
-    width: 100%; /* Full width */
+    width: 100%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     margin-bottom: 15px;
 }
 
 .project-section img:hover {
-    transform: scale(1.05); /* Slight zoom effect */
+    transform: scale(1.05);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
@@ -554,8 +539,8 @@ footer p {
     padding: 8px 20px;
     font-size: 0.9rem;
     font-weight: bold;
-    border: none; /* Ensures no border */
-    border-radius: 20px; /* Keeps the rounded look */
+    border: none;
+    border-radius: 20px;
     background: linear-gradient(135deg, #006d77, #023047);
     color: #fff;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -563,12 +548,12 @@ footer p {
 }
 
 .project-btn:hover {
-    transform: scale(1.05); /* Slight scaling */
+    transform: scale(1.05);
     background: linear-gradient(120deg, #005f73, #0a9396, #94d2bd);
 }
 
 .project-btn:active {
-    transform: scale(0.98); /* Shrink effect on click */
+    transform: scale(0.98);
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
@@ -577,10 +562,221 @@ footer p {
 ================================ */
 @media (max-width: 768px) {
     .project-section img {
-        height: 150px; /* Reduce image height on small screens */
+        height: 150px;
     }
 }
 
+/* ================================
+   PRICING SECTION
+================================ */
+.pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pricing-table thead th {
+    background: #f1f1f1;
+    color: #111;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 12px;
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+    line-height: 1.4;
+    border-right: 1px solid #ddd;
+}
+
+.pricing-table thead th:last-child {
+    border-right: none;
+}
+
+.pricing-table thead .price {
+    display: block;
+    font-size: 1.1rem;
+    color: #007bff;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.pricing-table tbody td {
+    padding: 10px 8px;
+    font-size: 0.95rem;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    border-right: 1px solid #eee;
+    line-height: 1.4;
+}
+
+.pricing-table tbody td:first-child {
+    text-align: left;
+    font-weight: bold;
+    color: #333;
+    text-align: center;
+}
+
+.pricing-table tbody td:last-child {
+    border-right: none;
+}
+
+.pricing-table tbody td.optional {
+    font-size: 0.85rem;
+    color: #ffc107;
+    font-weight: 500;
+}
+
+.pricing-table .tick {
+    color: #28a745;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.pricing-table .optional {
+    color: #ffc107;
+    font-size: 0.95rem;
+}
+
+.pricing-table .cross {
+    color: #dc3545;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .pricing-table thead th,
+    .pricing-table tbody td {
+        font-size: 0.85rem;
+        padding: 8px;
+    }
+
+    .pricing-table tbody td:first-child {
+        font-size: 0.9rem;
+    }
+}
+
+#pricing .text-center small {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+#pricing {
+    background: linear-gradient(to top left, #f8f9fa 60%, #e9ecef 40%);
+    padding: 60px 20px;
+}
+
+.consultation-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(135deg, #006d77, #023047);
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.consultation-btn:hover {
+    transform: scale(1.05);
+    background: linear-gradient(120deg, #005f73, #0a9396, #94d2bd);
+}
+
+.consultation-btn:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+#pricing .text-center {
+    margin-top: 20px;
+}
+
+/* ================================
+   REvIEWS
+================================ */
+#reviews {
+    padding: 3rem 0;
+}
+
+#reviews .reviews-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    position: relative;
+}
+
+#reviews .review {
+    flex: 1 1 calc(33.333% - 2rem);
+    text-align: center;
+    position: relative;
+}
+
+#reviews .review p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    color: #444;
+    line-height: 1.8;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+#reviews .review h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #333;
+    margin-top: 1rem;
+}
+
+#reviews .review .role {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.9rem;
+    color: #777;
+    margin-top: 0.2rem;
+}
+
+#reviews .review:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 10%;
+    bottom: 10%;
+    right: -1rem;
+    width: 1px;
+    background: linear-gradient(to bottom, #ddd 70%, rgba(221, 221, 221, 0));
+    z-index: 1;
+}
+
+#reviews .stars {
+    margin-bottom: 1rem;
+    color: #28a745;
+    font-size: 1.5rem;
+}
+
+#reviews .stars i {
+    margin: 0 2px;
+}
+
+@media (max-width: 768px) {
+    #reviews .review {
+        flex: 1 1 100%;
+    }
+
+    #reviews .review:not(:last-child)::after {
+        display: none;
+    }
+}
+
+
+#reviews {
+    background: linear-gradient(to bottom right, #f9f9fb 50%, #eceef3 50%);
+    padding: 60px 20px;
+}
 
 
 /* ================================
