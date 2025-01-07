@@ -319,7 +319,7 @@ footer p {
         flex-direction: column;
     }
     #about p {
-        text-align: center;
+        text-align: left;
         margin-right: 20px;
     }
 

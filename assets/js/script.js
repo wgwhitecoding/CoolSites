@@ -1,5 +1,7 @@
-// SECTION: Initialise AOS (Animate on Scroll)
-document.addEventListener("DOMContentLoaded", function () {
+/* =========================================================================
+   SECTION: Initialise AOS (Animate on Scroll)
+   ========================================================================= */
+   document.addEventListener("DOMContentLoaded", function () {
     AOS.init({
         duration: 800, // Animation duration in milliseconds
         easing: "ease-in-out", // Animation easing
@@ -7,60 +9,112 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// SECTION: Smooth Scroll for Anchor Links with Offset Adjustment and Navbar Collapse Handling
+/* =========================================================================
+   SECTION: Adjust Scroll Position for Cross-Page Navigation
+   ========================================================================= */
+
+function adjustScrollPosition() {
+    const navbar = document.querySelector(".navbar");
+
+    if (window.location.hash) {
+        const targetId = window.location.hash.substring(1); // Remove the '#'
+        const targetElement = document.getElementById(targetId);
+
+        if (targetElement) {
+            const navbarHeight = navbar ? navbar.offsetHeight : 0;
+            const targetPosition = targetElement.offsetTop - navbarHeight;
+
+            window.scrollTo({
+                top: targetPosition,
+                behavior: "smooth",
+            });
+        }
+    }
+}
+
+
+window.addEventListener("load", function () {
+    setTimeout(adjustScrollPosition, 100);
+});
+
+
 document.addEventListener("DOMContentLoaded", function () {
     const navbar = document.querySelector(".navbar");
-    const navbarToggler = document.querySelector(".navbar-toggler");
-    const navbarCollapse = document.querySelector(".navbar-collapse");
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    document.querySelectorAll('a[href^="#"], a[href^="index.html#"]').forEach(anchor => {
         anchor.addEventListener("click", function (e) {
-            e.preventDefault();
+            const href = this.getAttribute("href") || "";
+            if (href.includes("#")) {
+                e.preventDefault();
 
-            const target = document.querySelector(this.getAttribute("href"));
-            if (target) {
-                // Close the navbar menu if it's open
-                if (navbarCollapse && navbarCollapse.classList.contains("show")) {
-                    navbarToggler.click(); // Trigger a click to close the navbar
+                const parts = href.split("#");
+                const targetId = parts[1];
+
+                const onIndexPage = window.location.pathname.endsWith("index.html")
+                                     || window.location.pathname.endsWith("/"); 
+
+                if (onIndexPage && href.startsWith("index.html")) {
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        const navbarHeight = navbar ? navbar.offsetHeight : 0;
+                        const targetPosition = targetElement.offsetTop - navbarHeight;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: "smooth",
+                        });
+                    }
                 }
-
-                // Wait for the navbar to fully close before scrolling
-                setTimeout(() => {
-                    const navbarHeight = navbar.offsetHeight; // Dynamically calculate navbar height
-                    const scrollTargetPosition = target.offsetTop - navbarHeight; // Adjust for navbar height
-
-                    // Smooth scroll to the target position
-                    window.scrollTo({
-                        top: scrollTargetPosition,
-                        behavior: "smooth",
-                    });
-                }, 300); // Delay to ensure the navbar is collapsed
+                else if (onIndexPage && href.startsWith("#")) {
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        const navbarHeight = navbar ? navbar.offsetHeight : 0;
+                        const targetPosition = targetElement.offsetTop - navbarHeight;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: "smooth",
+                        });
+                    }
+                }
+                else {
+                    window.location.href = href;
+                }
             }
         });
     });
 });
 
-// SECTION: Navbar Scroll Effect (Add 'scrolled' Class on Scroll)
-document.addEventListener("scroll", function () {
+/* =========================================================================
+   SECTION: Sticky Navbar Scroll Effect (Always Active)
+   ========================================================================= */
+document.addEventListener("DOMContentLoaded", function () {
     const navbar = document.querySelector(".navbar");
-    if (window.scrollY > 50) {
-        navbar.classList.add("scrolled");
-    } else {
-        navbar.classList.remove("scrolled");
+
+    // Toggle .scrolled class based on scrollY
+    function handleScroll() {
+        if (window.scrollY > 50) {
+            navbar.classList.add("scrolled");
+        } else {
+            navbar.classList.remove("scrolled");
+        }
     }
+
+    handleScroll();
+
+    document.addEventListener("scroll", handleScroll);
 });
 
-// SECTION: Highlight Active Navbar Link Based on Scroll Position
+/* =========================================================================
+   SECTION: Highlight Active Navbar Link Based on Scroll Position
+   ========================================================================= */
 document.addEventListener("scroll", function () {
-    // Include sections, headers, and divs with IDs
     const sections = document.querySelectorAll("section, header[id], div[id]");
     const navbarLinks = document.querySelectorAll(".nav-link");
-    const navbarHeight = document.querySelector(".navbar").offsetHeight;
+    const navbar = document.querySelector(".navbar");
+    const navbarHeight = navbar ? navbar.offsetHeight : 0;
 
     let currentSection = null;
 
     sections.forEach(section => {
-        // Subtract a little extra (50px) so it activates earlier
         const sectionTop = section.offsetTop - (navbarHeight + 50);
         const sectionBottom = sectionTop + section.offsetHeight;
 
@@ -69,9 +123,14 @@ document.addEventListener("scroll", function () {
         }
     });
 
-    // Update navbar links
     navbarLinks.forEach(link => {
-        const linkTarget = link.getAttribute("href").slice(1); // Remove '#' from href
+        // e.g. "index.html#about" => ["index.html", "about"]
+        const href = link.getAttribute("href") || "";
+        let linkTarget = null;
+        if (href.includes("#")) {
+            linkTarget = href.split("#")[1];
+        }
+        
         if (linkTarget === currentSection) {
             link.classList.add("active");
         } else {
@@ -80,64 +139,69 @@ document.addEventListener("scroll", function () {
     });
 });
 
-// SECTION: Initialise EmailJS
+/* =========================================================================
+   SECTION: Initialise EmailJS
+   ========================================================================= */
 document.addEventListener("DOMContentLoaded", function () {
     (function () {
-        emailjs.init("your_user_id"); // Replace "your_user_id" with your actual EmailJS User ID
+        emailjs.init("your_user_id");
     })();
 });
 
-// SECTION: Form Submission Handler
+/* =========================================================================
+   SECTION: Form Submission Handler
+   ========================================================================= */
 document.addEventListener("DOMContentLoaded", function () {
     const contactForm = document.getElementById("contactForm");
     const statusMessage = document.getElementById("statusMessage");
 
     if (contactForm) {
         contactForm.addEventListener("submit", function (event) {
-            event.preventDefault(); // Prevent default form submission behaviour
+            event.preventDefault();
 
-            // Update status message to indicate sending
             if (statusMessage) {
                 statusMessage.textContent = "Sending your message...";
-                statusMessage.style.color = "#007bff"; // Blue colour for progress
+                statusMessage.style.color = "#007bff";
             }
 
-            // Send the form data using EmailJS
-            emailjs
-                .sendForm("your_service_id", "your_template_id", this) // Replace with your Service ID and Template ID
+            emailjs.sendForm("your_service_id", "your_template_id", this)
                 .then(() => {
-                    // Success: Update the status message
                     if (statusMessage) {
                         statusMessage.textContent = "Message sent successfully!";
-                        statusMessage.style.color = "green"; // Green colour for success
+                        statusMessage.style.color = "green";
                     }
-                    this.reset(); // Reset the form
+                    this.reset();
                 })
                 .catch((error) => {
-                    // Error: Update the status message with error feedback
                     if (statusMessage) {
                         statusMessage.textContent = "Failed to send your message. Please try again later.";
-                        statusMessage.style.color = "red"; // Red colour for errors
+                        statusMessage.style.color = "red";
                     }
-                    console.error("EmailJS Error:", error); // Log the error for debugging
+                    console.error("EmailJS Error:", error);
                 });
         });
     }
 });
 
-// SECTION: Dynamic Year for Footer
-document.addEventListener("DOMContentLoaded", () => {
+/* =========================================================================
+   SECTION: Dynamic Year for Footer
+   ========================================================================= */
+document.addEventListener("DOMContentLoaded", function () {
     const yearSpan = document.getElementById("currentYear");
     if (yearSpan) {
         yearSpan.textContent = new Date().getFullYear();
     }
 });
 
+/* =========================================================================
+   SECTION: Ensure Fade-in Animations Play
+   ========================================================================= */
 document.addEventListener("DOMContentLoaded", function () {
     const fadeElements = document.querySelectorAll(".fade-in");
     fadeElements.forEach((element) => {
         element.style.animationPlayState = "running";
     });
 });
+
 
 
