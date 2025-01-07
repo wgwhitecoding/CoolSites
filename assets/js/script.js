@@ -106,38 +106,69 @@ document.addEventListener("DOMContentLoaded", function () {
 /* =========================================================================
    SECTION: Highlight Active Navbar Link Based on Scroll Position
    ========================================================================= */
-document.addEventListener("scroll", function () {
-    const sections = document.querySelectorAll("section, header[id], div[id]");
+   document.addEventListener("DOMContentLoaded", function () {
     const navbarLinks = document.querySelectorAll(".nav-link");
     const navbar = document.querySelector(".navbar");
+    const sections = document.querySelectorAll("section, header[id], div[id]");
     const navbarHeight = navbar ? navbar.offsetHeight : 0;
 
-    let currentSection = null;
+    function highlightActiveLink() {
+        let currentSection = null;
 
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - (navbarHeight + 50);
-        const sectionBottom = sectionTop + section.offsetHeight;
+        // Check for scroll position and active section
+        sections.forEach((section) => {
+            const sectionTop = section.offsetTop - (navbarHeight + 50);
+            const sectionBottom = sectionTop + section.offsetHeight;
 
-        if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
-            currentSection = section.getAttribute("id");
-        }
-    });
+            if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
+                currentSection = section.getAttribute("id");
+            }
+        });
 
-    navbarLinks.forEach(link => {
-        // e.g. "index.html#about" => ["index.html", "about"]
-        const href = link.getAttribute("href") || "";
-        let linkTarget = null;
-        if (href.includes("#")) {
-            linkTarget = href.split("#")[1];
-        }
-        
-        if (linkTarget === currentSection) {
-            link.classList.add("active");
-        } else {
-            link.classList.remove("active");
+        navbarLinks.forEach((link) => {
+            const href = link.getAttribute("href") || "";
+            const linkTarget = href.includes("#") ? href.split("#")[1] : null;
+
+            if (linkTarget === currentSection) {
+                link.classList.add("active");
+            } else {
+                link.classList.remove("active");
+            }
+        });
+    }
+
+    // Check for specific pages like "contact.html"
+    function highlightForStaticPage() {
+        const currentPath = window.location.pathname;
+
+        navbarLinks.forEach((link) => {
+            const href = link.getAttribute("href") || "";
+
+            if (href.includes("contact.html") && currentPath.includes("contact.html")) {
+                link.classList.add("active");
+            } else if (href.includes("index.html") && currentPath.includes("index.html")) {
+                link.classList.add("active");
+            } else {
+                link.classList.remove("active");
+            }
+        });
+    }
+
+    // Initial check on load
+    if (window.location.pathname.includes("contact.html")) {
+        highlightForStaticPage(); // Highlight for contact page
+    } else {
+        highlightActiveLink(); // Highlight based on scroll
+    }
+
+    // Reapply scroll-based highlighting for scrollable pages
+    document.addEventListener("scroll", function () {
+        if (!window.location.pathname.includes("contact.html")) {
+            highlightActiveLink();
         }
     });
 });
+
 
 /* =========================================================================
    SECTION: Initialise EmailJS
