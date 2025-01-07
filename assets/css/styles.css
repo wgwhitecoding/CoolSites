@@ -118,6 +118,27 @@ footer p {
     }
 }
 
+/* Fade-in animation */
+.fade-in {
+    opacity: 0; /* Start invisible */
+    transform: translateY(-20px); /* Slight upward position */
+    animation: fadeIn 0.8s ease forwards; /* Fade-in animation */
+    animation-delay: var(--delay, 0s); /* Use custom delay for each element */
+}
+
+/* Keyframes for fade-in effect */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
 /* ================================
    HERO SECTION
 ================================ */
@@ -819,6 +840,11 @@ footer p {
 footer p .text-secondary {
     color: #bbb;
 }
+.text-pink {
+    color: #ff7eb3;
+    margin-left: 5px;
+}
+
 
 /* ================================
    ANIMATIONS

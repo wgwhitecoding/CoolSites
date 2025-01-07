@@ -50,22 +50,22 @@ document.addEventListener("scroll", function () {
     }
 });
 
-
 // SECTION: Highlight Active Navbar Link Based on Scroll Position
 document.addEventListener("scroll", function () {
-    const sections = document.querySelectorAll("section");
+    // Include sections, headers, and divs with IDs
+    const sections = document.querySelectorAll("section, header[id], div[id]");
     const navbarLinks = document.querySelectorAll(".nav-link");
     const navbarHeight = document.querySelector(".navbar").offsetHeight;
 
     let currentSection = null;
 
-    // Loop through sections to determine which one is in the viewport
     sections.forEach(section => {
-        const sectionTop = section.offsetTop - navbarHeight; // Adjust for navbar height
+        // Subtract a little extra (50px) so it activates earlier
+        const sectionTop = section.offsetTop - (navbarHeight + 50);
         const sectionBottom = sectionTop + section.offsetHeight;
 
         if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
-            currentSection = section.getAttribute("id"); // Get the section ID
+            currentSection = section.getAttribute("id");
         }
     });
 
@@ -73,14 +73,12 @@ document.addEventListener("scroll", function () {
     navbarLinks.forEach(link => {
         const linkTarget = link.getAttribute("href").slice(1); // Remove '#' from href
         if (linkTarget === currentSection) {
-            link.classList.add("active"); // Add active class
+            link.classList.add("active");
         } else {
-            link.classList.remove("active"); // Remove active class
+            link.classList.remove("active");
         }
     });
 });
-
-
 
 // SECTION: Initialise EmailJS
 document.addEventListener("DOMContentLoaded", function () {
@@ -126,3 +124,20 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+// SECTION: Dynamic Year for Footer
+document.addEventListener("DOMContentLoaded", () => {
+    const yearSpan = document.getElementById("currentYear");
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const fadeElements = document.querySelectorAll(".fade-in");
+    fadeElements.forEach((element) => {
+        element.style.animationPlayState = "running";
+    });
+});
+
+
