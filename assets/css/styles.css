@@ -625,28 +625,27 @@ footer p {
     border-right: none;
 }
 
-.pricing-table tbody td.optional {
-    font-size: 0.85rem;
-    color: #ffc107;
-    font-weight: 500;
-}
-
+/* TICK */
 .pricing-table .tick {
     color: #28a745;
     font-size: 1.2rem;
     font-weight: bold;
 }
 
+/* OPTIONAL */
 .pricing-table .optional {
     color: #ffc107;
-    font-size: 0.95rem;
+    font-size: 0.95rem; /* choose 0.85 or 0.95, but keep it consistent */
+    font-weight: 500;
 }
 
+/* CROSS */
 .pricing-table .cross {
     color: #dc3545;
     font-size: 1.2rem;
     font-weight: bold;
 }
+
 
 #pricing .text-center small {
     font-size: 0.85rem;
@@ -886,7 +885,6 @@ input:disabled, textarea:disabled, button:disabled {
 
 /* ================================
    RESPONSIVE MEDIA QUERIES
-   (All screen adjustments in one place)
 ================================ */
 
 /* ---------- NAVBAR ---------- */
@@ -960,8 +958,6 @@ input:disabled, textarea:disabled, button:disabled {
         font-size: 0.9rem;
     }
 }
-
-
 
 /* ---------- REVIEWS SECTION ---------- */
 @media (max-width: 768px) {
