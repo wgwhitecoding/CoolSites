@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             // Replace "your_service_id" and "your_template_id" with your EmailJS service and template IDs
-            emailjs.sendForm("service_aqrdzzp", "template_srkbwlb", this)
+            emailjs.sendForm("service_aqrdzzp", "template_9c1ch2b", this)
                 .then(() => {
                     if (statusMessage) {
                         statusMessage.textContent = "Message sent successfully!";
