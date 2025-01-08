@@ -13,9 +13,11 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
-    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/webfonts/fa-solid-900.woff2"
+        as="font" type="font/woff2" crossorigin="anonymous" />
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/webfonts/fa-brands-400.woff2"
+        as="font" type="font/woff2" crossorigin="anonymous" />
+
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -66,23 +68,25 @@
 
         <!-- Social Media Links -->
         <div class="d-flex justify-content-center mb-4 social-icons">
-            <a href="https://facebook.com" class="text-white me-3" target="_blank" title="Facebook">
+            <a href="https://facebook.com" class="text-white me-3 fade-in" target="_blank" title="Facebook"
+                style="--delay: 0.3s;">
                 <i class="fab fa-facebook"></i>
             </a>
-            <a href="https://x.com" class="text-white me-3" target="_blank" title="X">
+            <a href="https://x.com" class="text-white me-3 fade-in" target="_blank" title="X" style="--delay: 0.6s;">
                 <i class="fab fa-twitter"></i>
             </a>
-            <a href="https://linkedin.com" class="text-white me-3" target="_blank" title="LinkedIn">
+            <a href="https://linkedin.com" class="text-white me-3 fade-in" target="_blank" title="LinkedIn"
+                style="--delay: 0.9s;">
                 <i class="fab fa-linkedin"></i>
             </a>
-            <a href="https://wa.me/yourphonenumber" class="text-white me-3" target="_blank" title="WhatsApp">
+            <a href="https://wa.me/yourphonenumber" class="text-white me-3 fade-in" target="_blank" title="WhatsApp"
+                style="--delay: 1.2s;">
                 <i class="fab fa-whatsapp"></i>
             </a>
-            <a href="contact.html" class="text-white" title="Contact Us">
+            <a href="contact.html" class="text-white fade-in" title="Contact Us" style="--delay: 1.5s;">
                 <i class="fas fa-info-circle"></i>
             </a>
         </div>
-
         <!-- Call-to-Action Button -->
         <a href="#pricing" class="btn btn-primary btn-lg shadow">Get Started</a>
     </div>
@@ -396,9 +400,9 @@
 
         <!-- Copyright -->
         <hr class="my-3 text-secondary">
-        <p class="small mb-0">
-            &copy; <span id="currentYear"></span> All rights reserved.
-            <i class="fas fa-laptop-code text-pink"></i> Cool Sites
+        <p class="fade-in d-inline-block me-2" style="--delay: 3s;">All rights reserved.</p>
+        <p class="fade-in d-inline-block" style="--delay: 3.1s;">
+            <span class="text-secondary">&trade;<i class="fas fa-laptop-code"></i> Cool Sites</span>
         </p>
     </div>
 </footer>

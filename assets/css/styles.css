@@ -68,11 +68,10 @@ footer p {
     color: #fff;
 }
 
-.navbar-brand i, .text-secondary i{
+.navbar-brand i, .text-secondary i {
     margin-right: 10px;
     color: #ff7eb3;
 }
-
 
 .nav-link {
     font-size: 1rem;
@@ -120,13 +119,12 @@ footer p {
 
 /* Fade-in animation */
 .fade-in {
-    opacity: 0; /* Start invisible */
-    transform: translateY(-20px); /* Slight upward position */
-    animation: fadeIn 0.8s ease forwards; /* Fade-in animation */
-    animation-delay: var(--delay, 0s); /* Use custom delay for each element */
+    opacity: 0; 
+    transform: translateY(-20px);
+    animation: fadeIn 0.8s ease forwards; 
+    animation-delay: var(--delay, 0s);
 }
 
-/* Keyframes for fade-in effect */
 @keyframes fadeIn {
     0% {
         opacity: 0;
@@ -137,7 +135,6 @@ footer p {
         transform: translateY(0);
     }
 }
-
 
 /* ================================
    HERO SECTION
@@ -173,7 +170,7 @@ footer p {
 }
 
 .static-gradient {
-    color: #f4f6f3; /* Charcoal */
+    color: #f4f6f3;
     font-weight: bold;
 }
 
@@ -215,6 +212,7 @@ footer p {
     transform: scale(1.1) !important;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
     background: linear-gradient(120deg, #005f73, #0a9396, #94d2bd);
+
 }
 
 .hero-section .btn:active {
@@ -241,22 +239,22 @@ footer p {
     transform: scale(1.2);
 }
 
-/* Social Media Icons Styling */
+
 .social-icons i {
-    font-size: 1.5rem; /* Adjust the size of the icons */
-    margin-right: 1rem; /* Space between icons */
-    transition: transform 0.3s ease, color 0.3s ease; /* Optional hover effect */
+    font-size: 1.5rem;
+    margin-right: 1rem; 
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
-/* Remove margin on the last icon */
+
 .social-icons a:last-child i {
     margin-right: 0;
 }
 
-/* Hover Effect */
+
 .social-icons a:hover i {
-    transform: scale(1.2); /* Slightly enlarge on hover */
-    color: #ff7eb3; /* Optional hover colour */
+    transform: scale(1.2); 
+    color: #ff7eb3; 
 }
 
 @media (max-width: 768px) {
@@ -714,7 +712,6 @@ footer p {
     }
 }
 
-
 #pricing .text-center small {
     font-size: 0.85rem;
     color: #666;
@@ -741,7 +738,8 @@ footer p {
 
 .consultation-btn:hover {
     transform: scale(1.05);
-    background: linear-gradient(120deg, #005f73, #0a9396, #94d2bd);
+    background: linear-gradient(120deg, #005f73, #0a9396, #94d2bd); 
+    color: #fff;
 }
 
 .consultation-btn:active {
@@ -829,12 +827,10 @@ footer p {
     }
 }
 
-
 #reviews {
     background: linear-gradient(to bottom right, #f9f9fb 50%, #eceef3 50%);
     padding: 60px 20px;
 }
-
 
 /* ================================
    FOOTER SECTION
@@ -862,11 +858,13 @@ footer .fab,
 footer .fas {
     font-size: 1.5rem;
     transition: transform 0.3s ease;
+    
 }
 
 footer .fab:hover,
 footer .fas:hover {
     transform: scale(1.1);
+    color: #ff7eb3
 }
 
 footer p {
@@ -880,7 +878,6 @@ footer p .text-secondary {
     color: #ff7eb3;
     margin-left: 5px;
 }
-
 
 /* ================================
    ANIMATIONS
@@ -908,3 +905,113 @@ footer p .text-secondary {
         transform: translateY(0);
     }
 }
+
+/* ================================
+   CONTACT
+================================ */
+.progress {
+    width: 50%;
+    height: 8px;
+    background: linear-gradient(120deg, #d3d3d3, #eaeaea);
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+/* Progress Bar Fill */
+.progress-bar {
+    transition: width 0.3s ease;
+    background: linear-gradient(120deg, #005f73, #0a9396, #94d2bd);
+    border-radius: 5px 0 0 5px;
+    height: 100%;
+}
+
+.input-group-text i {
+    background: linear-gradient(120deg, #005f73, #0a9396, #94d2bd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.2rem;
+}
+
+input:focus, textarea:focus {
+    border-color: #ff7eb3;
+    box-shadow: 0 0 5px rgba(255, 126, 179, 0.5);
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeIn 0.8s ease forwards;
+    animation-delay: var(--delay, 0s);
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+input:disabled, textarea:disabled, button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.contact-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    background: linear-gradient(135deg, #006d77, #023047);
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.contact-btn:hover {
+    transform: scale(1.05) !important;
+    background: linear-gradient(120deg, #005f73, #0a9396, #94d2bd);
+    color: #ff7eb3;
+}
+
+#contact {
+    position: relative;
+    background: #f8f9fa;
+    padding: 3rem 0;
+    overflow: hidden;
+    z-index: 0;
+}
+
+#contact::before {
+    content: '';
+    position: absolute;
+    bottom: -450px;
+    left: -50px;
+    width: 200%;
+    height: 300px;
+    background: #e9ecef;
+    transform: rotate(10deg);
+    z-index: -1;
+}
+
+
+
+
+
+    
+
+
+
+
+
+
+
+

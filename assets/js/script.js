@@ -235,4 +235,34 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("progressiveForm");
+    const inputs = Array.from(form.querySelectorAll("input, textarea"));
+    const progressBar = document.getElementById("formProgressBar");
+    const submitButton = form.querySelector("button[type='submit']");
+    let progress = 0;
+
+    // Enable the first input field
+    inputs[0].disabled = false;
+
+    inputs.forEach((input, index) => {
+        input.addEventListener("input", () => {
+            if (input.checkValidity()) {
+                // Move to the next input field
+                if (index < inputs.length - 1) {
+                    inputs[index + 1].disabled = false;
+                }
+                // Update progress bar
+                progress = ((index + 1) / inputs.length) * 100;
+                progressBar.style.width = `${progress}%`;
+                progressBar.setAttribute("aria-valuenow", progress);
+
+                // Enable submit button if all fields are valid
+                if (index === inputs.length - 1 && input.checkValidity()) {
+                    submitButton.disabled = false;
+                }
+            }
+        });
+    });
+});
 
