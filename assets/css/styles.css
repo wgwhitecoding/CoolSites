@@ -644,11 +644,11 @@ footer p {
 /* Optional Dot */
 .pricing-table .optional .dot {
     display: inline-block;
-    width: 10px; /* Size of the dot */
-    height: 10px; /* Size of the dot */
-    background-color: #ffc107; /* Gold for optional feature */
-    border-radius: 50%; /* Circle */
-    margin: 0 auto; /* Centered */
+    width: 10px;
+    height: 10px;
+    background-color: #ffc107;
+    border-radius: 50%; 
+    margin: 0 auto; 
 }
 
 /* Table Cell */
@@ -924,26 +924,24 @@ input:disabled, textarea:disabled, button:disabled {
     #about .row {
         flex-direction: column;
     }
-
     #about p {
-        margin-left: -10px; /* Maintain the current left alignment */
-        margin-right: 20px; /* Add space on the right side */
-        padding-left: 0; /* Ensure no extra padding interferes */
-        text-align: left; /* Keep the text aligned to the left */
-        font-size: 16px; /* Ensure readability */
-        line-height: 1.6; /* Maintain good spacing between lines */
-    }
+        margin-left: -10px;
+        width: 325px;
+        font-size: 16px;
+       
 
+    }
     #about .row > div {
         flex: 1 1 100%;
         max-width: 100%;
     }
-
     #about .row > div:not(:last-child)::after {
         display: none;
     }
+    #about p:last-child {
+        padding-bottom: 0;
+    }
 }
-
 
 
 /* ---------- FEATURES SECTION ---------- */
