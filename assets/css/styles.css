@@ -625,37 +625,38 @@ footer p {
     border-right: none;
 }
 
-/* Ticks */
-.pricing-table .tick {
-    color: #28a745 !important; /* Green */
-    font-size: 1.2rem;
-    font-weight: bold;
+/* Ticks - Thicker and Larger */
+.pricing-table .tick i {
+    color: #28a745; /* Green for Font Awesome tick */
+    font-size: 1.4rem; /* Slightly larger tick */
+    font-weight: bold; /* Already thick, but Font Awesome respects size */
     text-align: center;
 }
 
+/* Crosses - Slightly Smaller */
 .pricing-table .cross {
-    color: #dc3545 !important;
-    font-size: 1.2rem;
-    font-weight: bold;
+    color: #dc3545; /* Red for Unicode X */
+    font-size: 1.1rem; /* Smaller X */
+    font-weight: bold; /* Still bold for visibility */
     text-align: center;
 }
 
+/* Optional Dot */
 .pricing-table .optional .dot {
     display: inline-block;
-    width: 10px;
-    height: 10px;
-    background-color: #ffc107;
-    border-radius: 50%;
-    margin: 0 auto;
+    width: 10px; /* Size of the dot */
+    height: 10px; /* Size of the dot */
+    background-color: #ffc107; /* Gold for optional feature */
+    border-radius: 50%; /* Circle */
+    margin: 0 auto; /* Centered */
 }
 
-/* Reset Table Cell Text Styles */
+/* Table Cell */
 .pricing-table td {
-    color: inherit; /* Ensure no parent styles override text */
     text-align: center;
     vertical-align: middle;
+    padding: 12px 8px;
 }
-
 
 
 #pricing .text-center small {
@@ -984,15 +985,6 @@ input:disabled, textarea:disabled, button:disabled {
 
 
 
-@media (max-width: 768px) {
-    .pricing-table .tick {
-        color: #28a745 !important;
-    }
-
-    .pricing-table .cross {
-        color: #dc3545 !important;
-    }
-}
 
     
 
