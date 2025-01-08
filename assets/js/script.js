@@ -1,7 +1,7 @@
 /* =========================================================================
    SECTION: Initialise AOS (Animate on Scroll)
    ========================================================================= */
-   document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
     AOS.init({
         duration: 800, // Animation duration in milliseconds
         easing: "ease-in-out", // Animation easing
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 const targetId = parts[1];
 
                 const onIndexPage = window.location.pathname.endsWith("index.html")
-                                     || window.location.pathname.endsWith("/"); 
+                    || window.location.pathname.endsWith("/");
 
                 if (onIndexPage && href.startsWith("index.html")) {
                     const targetElement = document.getElementById(targetId);
@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
 /* =========================================================================
    SECTION: Highlight Active Navbar Link Based on Scroll Position
    ========================================================================= */
-   document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {
     const navbarLinks = document.querySelectorAll(".nav-link");
     const navbar = document.querySelector(".navbar");
     const sections = document.querySelectorAll("section, header[id], div[id]");
@@ -137,7 +137,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Check for specific pages like "contact.html"
     function highlightForStaticPage() {
         const currentPath = window.location.pathname;
 
@@ -156,12 +155,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Initial check on load
     if (window.location.pathname.includes("contact.html")) {
-        highlightForStaticPage(); // Highlight for contact page
+        highlightForStaticPage();
     } else {
-        highlightActiveLink(); // Highlight based on scroll
+        highlightActiveLink();
     }
 
-    // Reapply scroll-based highlighting for scrollable pages
     document.addEventListener("scroll", function () {
         if (!window.location.pathname.includes("contact.html")) {
             highlightActiveLink();
@@ -234,7 +232,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
+/* =========================================================================
+   SECTION: form
+   ========================================================================= */
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("progressiveForm");
     const inputs = Array.from(form.querySelectorAll("input, textarea"));

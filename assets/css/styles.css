@@ -627,36 +627,35 @@ footer p {
 
 /* Ticks */
 .pricing-table .tick {
-    color: #28a745; /* Green */
+    color: #28a745 !important; /* Green */
     font-size: 1.2rem;
     font-weight: bold;
     text-align: center;
 }
 
-/* Crosses */
 .pricing-table .cross {
-    color: #dc3545; /* Red */
+    color: #dc3545 !important;
     font-size: 1.2rem;
     font-weight: bold;
     text-align: center;
 }
 
-/* Optional CSS Dot */
 .pricing-table .optional .dot {
     display: inline-block;
-    width: 10px; /* Adjust size */
-    height: 10px; /* Adjust size */
-    background-color: #ffc107; /* Gold */
-    border-radius: 50%; /* Makes it a circle */
-    margin: 0 auto; /* Centers the dot inside the cell */
+    width: 10px;
+    height: 10px;
+    background-color: #ffc107;
+    border-radius: 50%;
+    margin: 0 auto;
 }
 
-/* Table Cell Alignment */
+/* Reset Table Cell Text Styles */
 .pricing-table td {
+    color: inherit; /* Ensure no parent styles override text */
     text-align: center;
     vertical-align: middle;
-    padding: 12px 8px;
 }
+
 
 
 #pricing .text-center small {
@@ -985,6 +984,15 @@ input:disabled, textarea:disabled, button:disabled {
 
 
 
+@media (max-width: 768px) {
+    .pricing-table .tick {
+        color: #28a745 !important;
+    }
+
+    .pricing-table .cross {
+        color: #dc3545 !important;
+    }
+}
 
     
 
