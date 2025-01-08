@@ -924,17 +924,23 @@ input:disabled, textarea:disabled, button:disabled {
     #about .row {
         flex-direction: column;
     }
+
     #about p {
-        margin-right: 20px;
+        margin-left: -10px; 
+        margin-right: 0; 
+        padding-left: 0;
     }
+
     #about .row > div {
         flex: 1 1 100%;
         max-width: 100%;
     }
+
     #about .row > div:not(:last-child)::after {
         display: none;
     }
 }
+
 
 /* ---------- FEATURES SECTION ---------- */
 @media (max-width: 768px) {
