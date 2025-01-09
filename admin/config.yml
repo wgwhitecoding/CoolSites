@@ -17,112 +17,82 @@ collections:
         label: "Home"
         name: "home"
         fields:
-          # Navbar Section
+          # Navbar
           - label: "Navbar Brand"
             name: "navbar_brand"
             widget: "string"
-            selector: ".js-navbar-brand"
-            default: "Cool Sites"
-            required: true
+            selector: "[data-field='navbar_brand']"
 
           # Hero Section
           - label: "Hero Title"
             name: "hero_title"
             widget: "string"
-            selector: ".js-hero-title"
-            default: "Welcome to Cool Sites"
-            required: true
+            selector: "[data-field='hero_title']"
           - label: "Hero Subtitle"
             name: "hero_subtitle"
-            widget: "text"
-            selector: ".js-hero-subtitle"
-            default: "Creating professional, high-quality websites to bring your business online."
-            required: true
-          - label: "Hero CTA Text"
+            widget: "string"
+            selector: "[data-field='hero_subtitle']"
+          - label: "Hero CTA"
             name: "hero_cta"
             widget: "string"
-            selector: ".js-hero-cta"
-            default: "Get Started"
-            required: true
+            selector: "[data-field='hero_cta']"
 
           # About Section
           - label: "About Heading"
             name: "about_heading"
             widget: "string"
-            selector: ".js-about-heading"
-            default: "About Me"
-            required: true
-          - label: "About Paragraphs"
-            name: "about_paragraphs"
-            widget: "list"
-            fields:
-              - { label: "Paragraph", name: "paragraph", widget: "text", selector: ".js-about-paragraph" }
+            selector: "[data-field='about_heading']"
+          - label: "About Paragraph 1"
+            name: "about_paragraph_1"
+            widget: "string"
+            selector: "[data-field='about_paragraph_1']"
+          - label: "About Paragraph 2"
+            name: "about_paragraph_2"
+            widget: "string"
+            selector: "[data-field='about_paragraph_2']"
+          - label: "About Paragraph 3"
+            name: "about_paragraph_3"
+            widget: "string"
+            selector: "[data-field='about_paragraph_3']"
 
           # Features Section
           - label: "Features Heading"
             name: "features_heading"
             widget: "string"
-            selector: ".js-features-heading"
-            default: "Features"
-          - label: "Features"
-            name: "features"
-            widget: "list"
-            fields:
-              - { label: "Feature Title", name: "feature_title", widget: "string", selector: ".js-feature-title" }
-              - { label: "Feature Description", name: "feature_description", widget: "text", selector: ".js-feature-description" }
-              - { label: "Feature Icon", name: "feature_icon", widget: "string", selector: ".js-feature-icon", default: "fas fa-tools" }
-
-          # Projects Section
-          - label: "Projects Heading"
-            name: "projects_heading"
+            selector: "[data-field='features_heading']"
+          - label: "Feature 1 Title"
+            name: "feature1_title"
             widget: "string"
-            selector: ".js-projects-heading"
-            default: "Featured Projects"
-          - label: "Projects"
-            name: "projects"
-            widget: "list"
-            fields:
-              - { label: "Project Title", name: "project_title", widget: "string", selector: ".js-project-title" }
-              - { label: "Project Description", name: "project_description", widget: "text", selector: ".js-project-description" }
-              - { label: "Project Link", name: "project_link", widget: "string", selector: ".js-project-link", attribute: "href" }
-              - { label: "Project Image", name: "project_image", widget: "image", selector: ".js-project-image", attribute: "src" }
-
-          # Pricing Section
-          - label: "Pricing Heading"
-            name: "pricing_heading"
+            selector: "[data-field='feature1_title']"
+          - label: "Feature 1 Description"
+            name: "feature1_description"
+            widget: "text"
+            selector: "[data-field='feature1_description']"
+          - label: "Feature 2 Title"
+            name: "feature2_title"
             widget: "string"
-            selector: ".js-pricing-heading"
-            default: "Pricing"
-          - label: "Pricing Plans"
-            name: "pricing_plans"
-            widget: "list"
-            fields:
-              - { label: "Plan Name", name: "plan_name", widget: "string" }
-              - { label: "Plan Price", name: "plan_price", widget: "string" }
-              - { label: "Plan Features", name: "plan_features", widget: "list", fields: [{ label: "Feature", name: "feature", widget: "string" }] }
-
-          # Reviews Section
-          - label: "Reviews Heading"
-            name: "reviews_heading"
+            selector: "[data-field='feature2_title']"
+          - label: "Feature 2 Description"
+            name: "feature2_description"
+            widget: "text"
+            selector: "[data-field='feature2_description']"
+          - label: "Feature 3 Title"
+            name: "feature3_title"
             widget: "string"
-            selector: ".js-reviews-heading"
-            default: "What My Clients Say"
-          - label: "Reviews"
-            name: "reviews"
-            widget: "list"
-            fields:
-              - { label: "Review Text", name: "review_text", widget: "text", selector: ".js-review-text" }
-              - { label: "Author", name: "review_author", widget: "string", selector: ".js-review-author" }
-              - { label: "Role", name: "review_role", widget: "string", selector: ".js-review-role" }
+            selector: "[data-field='feature3_title']"
+          - label: "Feature 3 Description"
+            name: "feature3_description"
+            widget: "text"
+            selector: "[data-field='feature3_description']"
 
-          # Footer Section
+          # Footer
           - label: "Footer Rights"
             name: "footer_rights"
             widget: "string"
-            selector: ".js-footer-rights"
-            default: "All rights reserved."
+            selector: "[data-field='footer_rights']"
           - label: "Footer Trademark"
             name: "footer_trademark"
             widget: "string"
-            selector: ".js-footer-trademark"
+            selector: "[data-field='footer_trademark']"
+
 
