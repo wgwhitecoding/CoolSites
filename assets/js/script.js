@@ -12,7 +12,6 @@
 /* =========================================================================
    SECTION: Adjust Scroll Position for Cross-Page Navigation
    ========================================================================= */
-
 function adjustScrollPosition() {
     const navbar = document.querySelector(".navbar");
 
@@ -32,52 +31,56 @@ function adjustScrollPosition() {
     }
 }
 
-
 window.addEventListener("load", function () {
     setTimeout(adjustScrollPosition, 100);
 });
 
-
+/* =========================================================================
+   SECTION: Handle Navigation Link Clicks and Menu Collapse
+   ========================================================================= */
 document.addEventListener("DOMContentLoaded", function () {
     const navbar = document.querySelector(".navbar");
+    const navbarCollapse = document.querySelector(".navbar-collapse"); // Collapsible menu
+    const navLinks = document.querySelectorAll(".nav-link");
 
-    document.querySelectorAll('a[href^="#"], a[href^="index.html#"]').forEach(anchor => {
+    // Collapse menu on link click
+    navLinks.forEach((link) => {
+        link.addEventListener("click", function () {
+            if (navbarCollapse && navbarCollapse.classList.contains("show")) {
+                const bootstrapCollapse = new bootstrap.Collapse(navbarCollapse);
+                bootstrapCollapse.hide();
+            }
+        });
+    });
+
+    // Smooth scroll for current page or redirect for other pages
+    document.querySelectorAll('a[href]').forEach((anchor) => {
         anchor.addEventListener("click", function (e) {
             const href = this.getAttribute("href") || "";
-            if (href.includes("#")) {
+            const isHashLink = href.includes("#");
+            const isIndexPage = window.location.pathname.endsWith("index.html") || window.location.pathname.endsWith("/");
+
+            if (isHashLink) {
                 e.preventDefault();
 
                 const parts = href.split("#");
                 const targetId = parts[1];
+                const targetElement = document.getElementById(targetId);
 
-                const onIndexPage = window.location.pathname.endsWith("index.html")
-                    || window.location.pathname.endsWith("/");
-
-                if (onIndexPage && href.startsWith("index.html")) {
-                    const targetElement = document.getElementById(targetId);
-                    if (targetElement) {
-                        const navbarHeight = navbar ? navbar.offsetHeight : 0;
-                        const targetPosition = targetElement.offsetTop - navbarHeight;
-                        window.scrollTo({
-                            top: targetPosition,
-                            behavior: "smooth",
-                        });
-                    }
-                }
-                else if (onIndexPage && href.startsWith("#")) {
-                    const targetElement = document.getElementById(targetId);
-                    if (targetElement) {
-                        const navbarHeight = navbar ? navbar.offsetHeight : 0;
-                        const targetPosition = targetElement.offsetTop - navbarHeight;
-                        window.scrollTo({
-                            top: targetPosition,
-                            behavior: "smooth",
-                        });
-                    }
-                }
-                else {
+                if (isIndexPage && targetElement) {
+                    // Smooth scroll on the same page
+                    const navbarHeight = navbar ? navbar.offsetHeight : 0;
+                    const targetPosition = targetElement.offsetTop - navbarHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: "smooth",
+                    });
+                } else {
+                    // Redirect to index.html with the hash
                     window.location.href = href;
                 }
+            } else {
+                window.location.href = href;
             }
         });
     });
@@ -167,7 +170,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-
 /* =========================================================================
    SECTION: Dynamic Year for Footer
    ========================================================================= */
@@ -187,6 +189,8 @@ document.addEventListener("DOMContentLoaded", function () {
         element.style.animationPlayState = "running";
     });
 });
+
+
 
 
 
