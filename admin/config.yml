@@ -1,0 +1,114 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/images/uploads"
+public_folder: "/assets/images/uploads"
+
+# Enable Beta features for selector fields
+beta_features:
+  - ui
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "index.html"
+        label: "Home"
+        name: "home"
+        fields:
+          # Navbar
+          - label: "Navbar Brand"
+            name: "navbar_brand"
+            widget: "string"
+            selector: ".js-navbar-brand"
+            default: "Cool Sites"
+            required: true
+          
+          # Hero Section
+          - label: "Hero Title"
+            name: "hero_title"
+            widget: "string"
+            selector: ".js-hero-title"
+            default: "Welcome to Cool Sites"
+            required: true
+          - label: "Hero Subtitle"
+            name: "hero_subtitle"
+            widget: "text"
+            selector: ".js-hero-subtitle"
+            default: "Creating professional, high-quality websites for your business."
+          - label: "Hero CTA Text"
+            name: "hero_cta"
+            widget: "string"
+            selector: ".js-hero-cta"
+            default: "Get Started"
+            required: true
+
+          # About Section
+          - label: "About Heading"
+            name: "about_heading"
+            widget: "string"
+            selector: ".js-about-heading"
+            default: "About Me"
+            required: true
+          - label: "About Paragraphs"
+            name: "about_paragraphs"
+            widget: "list"
+            selector: ".js-about-paragraph"
+            default:
+              - "I’m a full-stack developer passionate about creating amazing websites."
+              - "I focus on one project at a time to deliver exceptional quality."
+              - "Let’s build something amazing together!"
+
+          # Features Section
+          - label: "Features"
+            name: "features"
+            widget: "list"
+            fields:
+              - { label: "Feature Title", name: "feature_title", widget: "string", selector: ".js-feature-title" }
+              - { label: "Feature Description", name: "feature_description", widget: "text", selector: ".js-feature-description" }
+              - { label: "Feature Icon", name: "feature_icon", widget: "string", selector: ".js-feature-icon", default: "fas fa-tools" }
+
+          # Projects Section
+          - label: "Projects"
+            name: "projects"
+            widget: "list"
+            fields:
+              - { label: "Project Title", name: "project_title", widget: "string", selector: ".js-project-title" }
+              - { label: "Project Description", name: "project_description", widget: "text", selector: ".js-project-description" }
+              - { label: "Project Link", name: "project_link", widget: "string", selector: ".js-project-link", attribute: "href" }
+              - { label: "Project Image", name: "project_image", widget: "image", selector: ".js-project-image", attribute: "src" }
+
+          # Pricing Section
+          - label: "Pricing Heading"
+            name: "pricing_heading"
+            widget: "string"
+            selector: ".js-pricing-heading"
+            default: "Pricing"
+          - label: "Pricing Plans"
+            name: "pricing_plans"
+            widget: "list"
+            fields:
+              - { label: "Plan Name", name: "plan_name", widget: "string" }
+              - { label: "Plan Price", name: "plan_price", widget: "string" }
+              - { label: "Plan Features", name: "plan_features", widget: "list", default: ["Feature 1", "Feature 2"] }
+
+          # Reviews Section
+          - label: "Reviews"
+            name: "reviews"
+            widget: "list"
+            fields:
+              - { label: "Review Text", name: "review_text", widget: "text", selector: ".js-review-text" }
+              - { label: "Author", name: "review_author", widget: "string", selector: ".js-review-author" }
+              - { label: "Role", name: "review_role", widget: "string", selector: ".js-review-role" }
+
+          # Footer
+          - label: "Footer Rights"
+            name: "footer_rights"
+            widget: "string"
+            selector: ".js-footer-rights"
+            default: "All rights reserved."
+          - label: "Footer Trademark"
+            name: "footer_trademark"
+            widget: "string"
+            selector: ".js-footer-trademark"
