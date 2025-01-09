@@ -5,21 +5,15 @@ backend:
 media_folder: "assets/images/uploads"
 public_folder: "/assets/images/uploads"
 
-# Enable Beta features for field selectors in HTML
-beta_features:
-  - ui
-
 collections:
   - name: "pages"
     label: "Pages"
     files:
-      - file: "index.html"
-        label: "Home"
-        name: "home"
+      - file: "admin/index.html"
+        label: "Admin Page"
+        name: "admin_page"
         fields:
-          # -----------------------------------------------------
-          # NAVBAR
-          # -----------------------------------------------------
+          # Navbar
           - label: "Navbar Brand"
             name: "navbar_brand"
             widget: "string"
@@ -27,9 +21,7 @@ collections:
             default: "Cool Sites"
             required: true
 
-          # -----------------------------------------------------
-          # HERO SECTION
-          # -----------------------------------------------------
+          # Hero Section
           - label: "Hero Title"
             name: "hero_title"
             widget: "string"
@@ -44,16 +36,14 @@ collections:
             default: "Creating professional, high-quality websites to bring your business online."
             required: true
 
-          - label: "Hero CTA Text"
+          - label: "Hero CTA"
             name: "hero_cta"
             widget: "string"
             selector: ".js-hero-cta"
             default: "Get Started"
             required: true
 
-          # -----------------------------------------------------
-          # ABOUT SECTION
-          # -----------------------------------------------------
+          # About Section
           - label: "About Heading"
             name: "about_heading"
             widget: "string"
@@ -76,16 +66,13 @@ collections:
             widget: "text"
             selector: ".js-about-paragraph-3"
 
-          # -----------------------------------------------------
-          # FEATURES SECTION
-          # -----------------------------------------------------
+          # Features Section
           - label: "Features Heading"
             name: "features_heading"
             widget: "string"
             selector: ".js-features-heading"
             default: "Features"
 
-          # Feature 1
           - label: "Feature 1 Title"
             name: "feature1_title"
             widget: "string"
@@ -96,27 +83,6 @@ collections:
             widget: "text"
             selector: ".js-feature1-text"
 
-          - label: "Feature 1 Bullet 1"
-            name: "feature1_bullet1"
-            widget: "string"
-            selector: ".js-feature1-bullet1"
-
-          - label: "Feature 1 Bullet 2"
-            name: "feature1_bullet2"
-            widget: "string"
-            selector: ".js-feature1-bullet2"
-
-          - label: "Feature 1 Bullet 3"
-            name: "feature1_bullet3"
-            widget: "string"
-            selector: ".js-feature1-bullet3"
-
-          - label: "Feature 1 Bullet 4"
-            name: "feature1_bullet4"
-            widget: "string"
-            selector: ".js-feature1-bullet4"
-
-          # Feature 2
           - label: "Feature 2 Title"
             name: "feature2_title"
             widget: "string"
@@ -127,27 +93,6 @@ collections:
             widget: "text"
             selector: ".js-feature2-text"
 
-          - label: "Feature 2 Bullet 1"
-            name: "feature2_bullet1"
-            widget: "string"
-            selector: ".js-feature2-bullet1"
-
-          - label: "Feature 2 Bullet 2"
-            name: "feature2_bullet2"
-            widget: "string"
-            selector: ".js-feature2-bullet2"
-
-          - label: "Feature 2 Bullet 3"
-            name: "feature2_bullet3"
-            widget: "string"
-            selector: ".js-feature2-bullet3"
-
-          - label: "Feature 2 Bullet 4"
-            name: "feature2_bullet4"
-            widget: "string"
-            selector: ".js-feature2-bullet4"
-
-          # Feature 3
           - label: "Feature 3 Title"
             name: "feature3_title"
             widget: "string"
@@ -158,36 +103,13 @@ collections:
             widget: "text"
             selector: ".js-feature3-text"
 
-          - label: "Feature 3 Bullet 1"
-            name: "feature3_bullet1"
-            widget: "string"
-            selector: ".js-feature3-bullet1"
-
-          - label: "Feature 3 Bullet 2"
-            name: "feature3_bullet2"
-            widget: "string"
-            selector: ".js-feature3-bullet2"
-
-          - label: "Feature 3 Bullet 3"
-            name: "feature3_bullet3"
-            widget: "string"
-            selector: ".js-feature3-bullet3"
-
-          - label: "Feature 3 Bullet 4"
-            name: "feature3_bullet4"
-            widget: "string"
-            selector: ".js-feature3-bullet4"
-
-          # -----------------------------------------------------
-          # PROJECTS SECTION
-          # -----------------------------------------------------
+          # Projects Section
           - label: "Projects Heading"
             name: "projects_heading"
             widget: "string"
             selector: ".js-projects-heading"
             default: "Featured Projects"
 
-          # Project 1
           - label: "Project 1 Title"
             name: "project1_title"
             widget: "string"
@@ -210,7 +132,6 @@ collections:
             selector: ".js-project1-image"
             attribute: "src"
 
-          # Project 2
           - label: "Project 2 Title"
             name: "project2_title"
             widget: "string"
@@ -233,42 +154,13 @@ collections:
             selector: ".js-project2-image"
             attribute: "src"
 
-          # Project 3
-          - label: "Project 3 Title"
-            name: "project3_title"
-            widget: "string"
-            selector: ".js-project3-title"
-
-          - label: "Project 3 Description"
-            name: "project3_description"
-            widget: "text"
-            selector: ".js-project3-description"
-
-          - label: "Project 3 Link"
-            name: "project3_link"
-            widget: "string"
-            selector: ".js-project3-link"
-            attribute: "href"
-
-          - label: "Project 3 Image"
-            name: "project3_image"
-            widget: "image"
-            selector: ".js-project3-image"
-            attribute: "src"
-
-          # -----------------------------------------------------
-          # PRICING SECTION
-          # -----------------------------------------------------
+          # Pricing Section
           - label: "Pricing Heading"
             name: "pricing_heading"
             widget: "string"
             selector: ".js-pricing-heading"
             default: "Pricing"
 
-          # If you want to manage each plan text directly, 
-          # you need matching .js-* classes in your HTML 
-          # for each plan (Basic, Standard, Premium).
-          # Example for "Basic" price:
           - label: "Basic Price"
             name: "pricing_basic_price"
             widget: "string"
@@ -284,18 +176,13 @@ collections:
             widget: "string"
             selector: ".js-pricing-premium-price"
 
-          # etc. Similarly for all the other text in the table if needed
-
-          # -----------------------------------------------------
-          # REVIEWS SECTION
-          # -----------------------------------------------------
+          # Reviews Section
           - label: "Reviews Heading"
             name: "reviews_heading"
             widget: "string"
             selector: ".js-reviews-heading"
             default: "What My Clients Say"
 
-          # Review 1
           - label: "Review 1 Text"
             name: "review1_text"
             widget: "text"
@@ -306,12 +193,6 @@ collections:
             widget: "string"
             selector: ".js-review1-author"
 
-          - label: "Review 1 Role"
-            name: "review1_role"
-            widget: "string"
-            selector: ".js-review1-role"
-
-          # Review 2
           - label: "Review 2 Text"
             name: "review2_text"
             widget: "text"
@@ -322,30 +203,7 @@ collections:
             widget: "string"
             selector: ".js-review2-author"
 
-          - label: "Review 2 Role"
-            name: "review2_role"
-            widget: "string"
-            selector: ".js-review2-role"
-
-          # Review 3
-          - label: "Review 3 Text"
-            name: "review3_text"
-            widget: "text"
-            selector: ".js-review3-text"
-
-          - label: "Review 3 Author"
-            name: "review3_author"
-            widget: "string"
-            selector: ".js-review3-author"
-
-          - label: "Review 3 Role"
-            name: "review3_role"
-            widget: "string"
-            selector: ".js-review3-role"
-
-          # -----------------------------------------------------
-          # FOOTER
-          # -----------------------------------------------------
+          # Footer
           - label: "Footer Rights"
             name: "footer_rights"
             widget: "string"
