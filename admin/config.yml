@@ -5,7 +5,6 @@ backend:
 media_folder: "assets/images/uploads"
 public_folder: "/assets/images/uploads"
 
-# Enable Beta features for selector fields
 beta_features:
   - ui
 
@@ -17,6 +16,12 @@ collections:
         label: "Home"
         name: "home"
         fields:
+          # Site Title
+          - label: "Site Title"
+            name: "site_title"
+            widget: "string"
+            selector: "[data-field='site_title']"
+
           # Navbar
           - label: "Navbar Brand"
             name: "navbar_brand"
@@ -30,7 +35,7 @@ collections:
             selector: "[data-field='hero_title']"
           - label: "Hero Subtitle"
             name: "hero_subtitle"
-            widget: "string"
+            widget: "text"
             selector: "[data-field='hero_subtitle']"
           - label: "Hero CTA"
             name: "hero_cta"
@@ -44,15 +49,15 @@ collections:
             selector: "[data-field='about_heading']"
           - label: "About Paragraph 1"
             name: "about_paragraph_1"
-            widget: "string"
+            widget: "text"
             selector: "[data-field='about_paragraph_1']"
           - label: "About Paragraph 2"
             name: "about_paragraph_2"
-            widget: "string"
+            widget: "text"
             selector: "[data-field='about_paragraph_2']"
           - label: "About Paragraph 3"
             name: "about_paragraph_3"
-            widget: "string"
+            widget: "text"
             selector: "[data-field='about_paragraph_3']"
 
           # Features Section
@@ -94,5 +99,6 @@ collections:
             name: "footer_trademark"
             widget: "string"
             selector: "[data-field='footer_trademark']"
+
 
 
