@@ -88,6 +88,10 @@
         <a href="#pricing" class="btn btn-primary btn-lg shadow">Get Started</a>
     </div>
 </header>
+
+<div id="identity-widget-container" style="display: none;">
+    <!-- The widget will load here -->
+</div>
 <!-- About and Features Combined Section -->
 <section id="about-features" class="py-5">
     <div class="container">
@@ -399,17 +403,35 @@
 <script src="assets/js/script.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<script>
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", (user) => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
+  <script>
+    // Ensure the widget is hidden by default
+    document.addEventListener("DOMContentLoaded", () => {
+      const widgetContainer = document.getElementById("identity-widget-container");
+      if (widgetContainer) {
+        widgetContainer.style.display = "none";
       }
     });
-  }
-</script>
+
+    // Initialize Netlify Identity
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", (user) => {
+        if (user) {
+          // Show the widget if the user is logged in
+          const widgetContainer = document.getElementById("identity-widget-container");
+          if (widgetContainer) {
+            widgetContainer.style.display = "block";
+          }
+        } else {
+          // Redirect unauthorised users if they access the admin page
+          if (window.location.pathname === "/admin/") {
+            window.location.href = "/";
+          }
+        }
+      });
+
+      window.netlifyIdentity.init();
+    }
+  </script>
 
 </body>
 
