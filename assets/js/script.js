@@ -1,7 +1,7 @@
 /* =========================================================================
    SECTION: Initialise AOS (Animate on Scroll)
    ========================================================================= */
-document.addEventListener("DOMContentLoaded", function () {
+   document.addEventListener("DOMContentLoaded", function () {
     AOS.init({
         duration: 800, // Animation duration in milliseconds
         easing: "ease-in-out", // Animation easing
@@ -167,6 +167,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+
 /* =========================================================================
    SECTION: Dynamic Year for Footer
    ========================================================================= */
@@ -186,6 +187,8 @@ document.addEventListener("DOMContentLoaded", function () {
         element.style.animationPlayState = "running";
     });
 });
+
+
 
 
 

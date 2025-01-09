@@ -1,79 +1,94 @@
-/* =========================================================================
-   SECTION: Initialise EmailJS
-   ========================================================================= */
-   document.addEventListener("DOMContentLoaded", function () {
-    (function () {
-        // Replace "your_user_id" with your EmailJS user ID
-        emailjs.init("CEelE7ptG6eUWa_nE");
-    })();
-});
-
-/* =========================================================================
-   SECTION: Form Submission Handler
-   ========================================================================= */
+/************************************************************
+  Progressive Form + EmailJS Integration + Modal Trigger
+*************************************************************/
 document.addEventListener("DOMContentLoaded", function () {
-    const contactForm = document.getElementById("progressiveForm");
-    const statusMessage = document.getElementById("statusMessage");
-
-    if (contactForm) {
-        contactForm.addEventListener("submit", function (event) {
-            event.preventDefault();
-
-            if (statusMessage) {
-                statusMessage.textContent = "Sending your message...";
-                statusMessage.style.color = "#007bff"; // Blue
-            }
-
-            // Replace "your_service_id" and "your_template_id" with your EmailJS service and template IDs
-            emailjs.sendForm("service_aqrdzzp", "template_9c1ch2b", this)
-                .then(() => {
-                    if (statusMessage) {
-                        statusMessage.textContent = "Message sent successfully!";
-                        statusMessage.style.color = "green"; // Green
-                    }
-                    this.reset(); // Reset the form after successful submission
-                })
-                .catch((error) => {
-                    if (statusMessage) {
-                        statusMessage.textContent = "Failed to send your message. Please try again later.";
-                        statusMessage.style.color = "red"; // Red
-                    }
-                    console.error("EmailJS Error:", error);
-                });
-        });
-    }
-});
-
-/* =========================================================================
-   SECTION: form
-   ========================================================================= */
-document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("progressiveForm");
+    /************************************************************
+      1. Initialize EmailJS
+    *************************************************************/
+    emailjs.init("CEelE7ptG6eUWa_nE"); 
+    // Replace above with your actual PUBLIC KEY if different.
+  
+    /************************************************************
+      2. Progressive Form Logic
+    *************************************************************/
+    const form = document.getElementById("contactForm");
     const inputs = Array.from(form.querySelectorAll("input, textarea"));
     const progressBar = document.getElementById("formProgressBar");
     const submitButton = form.querySelector("button[type='submit']");
     let progress = 0;
-
-    // Enable the first input field
-    inputs[0].disabled = false;
-
+  
+    // Enable only the first input at start
+    if (inputs.length > 0) {
+      inputs[0].disabled = false;
+    }
+  
     inputs.forEach((input, index) => {
-        input.addEventListener("input", () => {
-            if (input.checkValidity()) {
-                // Move to the next input field
-                if (index < inputs.length - 1) {
-                    inputs[index + 1].disabled = false;
-                }
-                // Update progress bar
-                progress = ((index + 1) / inputs.length) * 100;
-                progressBar.style.width = `${progress}%`;
-                progressBar.setAttribute("aria-valuenow", progress);
-
-                // Enable submit button if all fields are valid
-                if (index === inputs.length - 1 && input.checkValidity()) {
-                    submitButton.disabled = false;
-                }
-            }
-        });
+      input.addEventListener("input", () => {
+        // Check if current field is valid
+        if (input.checkValidity()) {
+          // Unlock the next field
+          if (index < inputs.length - 1) {
+            inputs[index + 1].disabled = false;
+          }
+  
+          // Update progress bar
+          progress = ((index + 1) / inputs.length) * 100;
+          progressBar.style.width = `${progress}%`;
+          progressBar.setAttribute("aria-valuenow", progress);
+  
+          // If this is the last field and it's valid, enable the submit button
+          if (index === inputs.length - 1 && input.checkValidity()) {
+            submitButton.disabled = false;
+          }
+        }
+      });
     });
-});
+  
+    /************************************************************
+      3. Form Submission - Send Email via EmailJS
+    *************************************************************/
+    form.addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent page refresh on submit
+  
+      // Optionally show some "loading" text or spinner here, if desired
+  
+      // Use EmailJS to send the form
+      emailjs
+        .sendForm("service_aqrdzzp", "template_9c1ch2b", this)
+        .then(
+          // Success callback
+          () => {
+            // Show the confirmation modal
+            const confirmationModal = new bootstrap.Modal(
+              document.getElementById("confirmationModal")
+            );
+            confirmationModal.show();
+  
+            // Reset the form
+            form.reset();
+  
+            // Reset progress bar and disable fields again
+            progressBar.style.width = "0%";
+            progressBar.setAttribute("aria-valuenow", 0);
+            submitButton.disabled = true;
+            inputs.forEach((input, index) => {
+              // Disable except the first one
+              if (index === 0) {
+                input.disabled = false;
+              } else {
+                input.disabled = true;
+              }
+            });
+          },
+          // Error callback
+          (error) => {
+            console.error("EmailJS Error:", error);
+            alert(
+              "Oops, something went wrong. Please try again later or contact support."
+            );
+          }
+        );
+    });
+  });
+  
+
