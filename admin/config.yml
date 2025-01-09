@@ -17,149 +17,110 @@ collections:
         label: "Home"
         name: "home"
         fields:
-          # Example fields for the navbar brand text
+          # Navbar Section
           - label: "Navbar Brand"
             name: "navbar_brand"
             widget: "string"
             selector: ".js-navbar-brand"
-          
+            default: "Cool Sites"
+            required: true
+
           # Hero Section
           - label: "Hero Title"
             name: "hero_title"
             widget: "string"
             selector: ".js-hero-title"
+            default: "Welcome to Cool Sites"
+            required: true
           - label: "Hero Subtitle"
             name: "hero_subtitle"
             widget: "text"
             selector: ".js-hero-subtitle"
+            default: "Creating professional, high-quality websites to bring your business online."
+            required: true
           - label: "Hero CTA Text"
             name: "hero_cta"
             widget: "string"
             selector: ".js-hero-cta"
-          
-          # About Headline
+            default: "Get Started"
+            required: true
+
+          # About Section
           - label: "About Heading"
             name: "about_heading"
             widget: "string"
             selector: ".js-about-heading"
-          
-          # About Paragraph 1
-          - label: "About Paragraph 1"
-            name: "about_paragraph_1"
-            widget: "text"
-            selector: ".js-about-paragraph-1"
-          - label: "About Paragraph 2"
-            name: "about_paragraph_2"
-            widget: "text"
-            selector: ".js-about-paragraph-2"
-          - label: "About Paragraph 3"
-            name: "about_paragraph_3"
-            widget: "text"
-            selector: ".js-about-paragraph-3"
+            default: "About Me"
+            required: true
+          - label: "About Paragraphs"
+            name: "about_paragraphs"
+            widget: "list"
+            fields:
+              - { label: "Paragraph", name: "paragraph", widget: "text", selector: ".js-about-paragraph" }
 
-          # Features Title
+          # Features Section
           - label: "Features Heading"
             name: "features_heading"
             widget: "string"
             selector: ".js-features-heading"
-          
-          # Feature 1 Title
-          - label: "Feature 1 Title"
-            name: "feature1_title"
-            widget: "string"
-            selector: ".js-feature1-title"
-          - label: "Feature 1 Text"
-            name: "feature1_text"
-            widget: "text"
-            selector: ".js-feature1-text"
-          - label: "Feature 1 Bullet 1"
-            name: "feature1_bullet1"
-            widget: "string"
-            selector: ".js-feature1-bullet1"
-          # ... Repeat for the rest of bullet2, bullet3, bullet4, etc.
-          
-          # Projects heading
+            default: "Features"
+          - label: "Features"
+            name: "features"
+            widget: "list"
+            fields:
+              - { label: "Feature Title", name: "feature_title", widget: "string", selector: ".js-feature-title" }
+              - { label: "Feature Description", name: "feature_description", widget: "text", selector: ".js-feature-description" }
+              - { label: "Feature Icon", name: "feature_icon", widget: "string", selector: ".js-feature-icon", default: "fas fa-tools" }
+
+          # Projects Section
           - label: "Projects Heading"
             name: "projects_heading"
             widget: "string"
             selector: ".js-projects-heading"
-          - label: "Projects Intro"
-            name: "projects_intro"
-            widget: "text"
-            selector: ".js-projects-intro"
+            default: "Featured Projects"
+          - label: "Projects"
+            name: "projects"
+            widget: "list"
+            fields:
+              - { label: "Project Title", name: "project_title", widget: "string", selector: ".js-project-title" }
+              - { label: "Project Description", name: "project_description", widget: "text", selector: ".js-project-description" }
+              - { label: "Project Link", name: "project_link", widget: "string", selector: ".js-project-link", attribute: "href" }
+              - { label: "Project Image", name: "project_image", widget: "image", selector: ".js-project-image", attribute: "src" }
 
-          # Example: Project 1 Title
-          - label: "Project 1 Title"
-            name: "project1_title"
-            widget: "string"
-            selector: ".js-project1-title"
-          - label: "Project 1 Description"
-            name: "project1_description"
-            widget: "text"
-            selector: ".js-project1-description"
-          - label: "Project 1 Link"
-            name: "project1_link"
-            widget: "string"
-            selector: ".js-project1-link"
-            attribute: "href"
-          - label: "Project 1 Image"
-            name: "project1_image"
-            widget: "image"
-            selector: ".js-project1-image"
-            attribute: "src"
-          # ... same pattern for Project 2 & 3
-          
-          # Pricing Heading
+          # Pricing Section
           - label: "Pricing Heading"
             name: "pricing_heading"
             widget: "string"
             selector: ".js-pricing-heading"
-          
-          # Pricing: Basic price
-          - label: "Pricing Basic Price"
-            name: "pricing_basic_price"
-            widget: "string"
-            selector: ".js-pricing-basic-price"
+            default: "Pricing"
+          - label: "Pricing Plans"
+            name: "pricing_plans"
+            widget: "list"
+            fields:
+              - { label: "Plan Name", name: "plan_name", widget: "string" }
+              - { label: "Plan Price", name: "plan_price", widget: "string" }
+              - { label: "Plan Features", name: "plan_features", widget: "list", fields: [{ label: "Feature", name: "feature", widget: "string" }] }
 
-          # Price row1
-          - label: "Row1 Label"
-            name: "price_row1_label"
-            widget: "string"
-            selector: ".js-price-row1-label"
-          - label: "Row1 Basic"
-            name: "price_row1_basic"
-            widget: "string"
-            selector: ".js-price-row1-basic"
-            # This is an <i> icon or text
-          
-          # ... and so on for each row/cell you want to edit.
-
-          # Reviews heading
+          # Reviews Section
           - label: "Reviews Heading"
             name: "reviews_heading"
             widget: "string"
             selector: ".js-reviews-heading"
-          
-          # Review1 text, author, role
-          - label: "Review 1 Text"
-            name: "review1_text"
-            widget: "text"
-            selector: ".js-review1-text"
-          - label: "Review 1 Author"
-            name: "review1_author"
-            widget: "string"
-            selector: ".js-review1-author"
-          - label: "Review 1 Role"
-            name: "review1_role"
-            widget: "string"
-            selector: ".js-review1-role"
-          # ... Repeat for Review 2 and 3
+            default: "What My Clients Say"
+          - label: "Reviews"
+            name: "reviews"
+            widget: "list"
+            fields:
+              - { label: "Review Text", name: "review_text", widget: "text", selector: ".js-review-text" }
+              - { label: "Author", name: "review_author", widget: "string", selector: ".js-review-author" }
+              - { label: "Role", name: "review_role", widget: "string", selector: ".js-review-role" }
 
-          # Footer
+          # Footer Section
           - label: "Footer Rights"
             name: "footer_rights"
             widget: "string"
             selector: ".js-footer-rights"
+            default: "All rights reserved."
           - label: "Footer Trademark"
             name: "footer_trademark"
             widget: "string"
