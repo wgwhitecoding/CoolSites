@@ -17,6 +17,8 @@ collections:
         label: "Home"
         name: "home"
         fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Body Content", name: "body", widget: "markdown" }
           # -----------------------------------------------------
           # NAVBAR
           # -----------------------------------------------------
