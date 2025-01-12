@@ -1,5 +1,7 @@
 # CoolSites 🌟
 
+![Home](assets/images/home.png)
+
 **CoolSites** is a fully responsive website designed to showcase my web development services and provide a live demo for potential clients. Whether you're a small business owner or an individual looking to create an online presence, this project serves as both a portfolio of my work and a tool to help clients visualise the possibilities for their own websites.
 
 ---
@@ -40,16 +42,16 @@ CoolSites is fully responsive, offering an exceptional experience on any device:
 ## 📸 **Screenshots**
 
 ### Homepage  
-![Homepage](./assets/screenshots/Screenshot_homepage.png)
+![Homepage](assets/images/homepage.png)
 
 ### Contact Page  
-![Contact Page](./assets/screenshots/Screenshot_contact.png)
+![Contact Page](assets/images/contact.png)
 
 ### Features Section  
-![Features Section](./assets/screenshots/Screenshot_features.png)
+![Features Section](assets/images/Features.png)
 
 ### Pricing Section  
-![Pricing Section](./assets/screenshots/Screenshot_pricing.png)
+![Pricing Section](assets/images/pricing.png)
 
 ---
 
@@ -102,7 +104,7 @@ This website is built using modern web development tools:
    ```bash
    cd CoolSites
 
-3. **Open in Browser**
+3. **Open in Browser:**
    Open index.html in your preferred browser.
 
 ### 🔮 Future Plans
