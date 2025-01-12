@@ -146,7 +146,45 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ### ✨ Let’s Build Something Amazing! ✨
 
-Explore the demo, reach out via the contact form, or email me directly. I look forward to helping you bring your ideas to life!
+Explore the demo, reach out via the contact form, or email me directly. I look forward to helping you bring your ideas to life
+
+## 🤝 Connect with Me
+
+<div align="center">
+ <p>✨ Feel free to reach out for collaborations, projects, or just a chat! ✨</p>
+ 
+  
+  <a href="https://www.linkedin.com/in/walidwillwhite/" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+  </a>
+  <a href="mailto:walidwillwhite@gmail.com" target="_blank">
+    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail">
+  </a>
+  <a href="https://wgwhitecoding.github.io/portfolio/" target="_blank">
+    <img src="https://img.shields.io/badge/Portfolio-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" alt="Portfolio">
+  </a>
+  <a href="https://wgwhitecoding.github.io/CoolSites/" target="_blank">
+    <img src="https://img.shields.io/badge/Want%20a%20Website%3F-00A676?style=for-the-badge&logo=firefox&logoColor=white" alt="Want a Website?">
+  </a>
+  <a href="https://www.linkedin.com/company/techa-nalogy/?viewAsMember=true" target="_blank">
+    <img src="https://img.shields.io/badge/Tech--Analogy-FFD700?style=for-the-badge&logo=bulb&logoColor=white" alt="Tech-Analogy">
+  </a>
+</div>
+<br><br>
+<div align="center">
+🚀 Let’s connect and build something amazing together! 🚀
+</div>
+
+---
+<div align="center">
+<h2>💡 Quote of the Day</h2>
+
+![Quote](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark)
+
+---
+
+⭐️ Thanks for visiting! Feel free to explore my repositories, star any that interest you, and follow me for updates on my latest projects. 😊
+</div>
 
 
    
